@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const CarouselButton = props => <button {...props} />;
+export default class CarouselButton extends Component {
+  constructor(props) {
+    super(props);
+    this.propTypes = { children: PropTypes.node.isRequired };
+  }
 
-CarouselButton.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default CarouselButton;
+  render() {
+    return (
+      <button {...this.props} />
+    );
+  }
+}
