@@ -8,7 +8,7 @@ describe('CarouselButton', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = wrapper = shallow(<CarouselButton children={txt} />);
+    wrapper = wrapper = shallow(<CarouselButton>{txt}</CarouselButton>);
   });
 
   it('renders a <button>', () => {
