@@ -1,9 +1,10 @@
 
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import CarouselButton from './CarouselButton';
 import CarouselSlide from './CarouselSlide';
 
-export default class Carousel extends PureComponent {
+class Carousel extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { slideIndex: 0 };
@@ -44,3 +45,9 @@ export default class Carousel extends PureComponent {
     );
   }
 }
+
+Carousel.propTypes = {
+  slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes)).isRequired,
+};
+
+export default Carousel;
