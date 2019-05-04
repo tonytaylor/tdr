@@ -5,10 +5,12 @@ const referralParams = 'utm_source=test-driven-carousel&utm_medium=referral';
 const getUsernameUrl = username => `https://unsplash.com@${username}?${referralParams}`;
 const getAttribution = ({ name, username }) => {
   <>
-    Photo by <a href="{getUsernameUrl(username)}>">{name}</a> on{' '}
+    Photo by <a href={`${getUsernameUrl(username)}`}>{name}</a> on{' '}
     <a href={`https://unsplash.com/?${referralParams}`}>Unsplash</a>
   </>
 };
+
+
 
 export default [{
   description: 'Seattle',
@@ -23,7 +25,7 @@ export default [{
   description: 'Chicago',
   attribution: getAttribution({
     name: 'Enes',
-    username: 'royalfound'
+    username: 'royalfound',
   }),
   imgUrl:
     'https://images.unsplash.com/photo-1484249170766-998fa6efe3c0?w=1080' +
@@ -55,4 +57,4 @@ export default [{
   imgUrl:
     'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1080' +
     '&ixid=eyJhcHBfaWQiOjIzODE4fQ&s=966003791f746c210b73863cf6170e6c',
-}]
+}];
